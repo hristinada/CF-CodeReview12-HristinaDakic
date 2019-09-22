@@ -1,27 +1,14 @@
+  <!-- include login validation -->
+  <?php include 'login_validation.php';?>
 
-<?php 
-  include 'login_validation.php';
-?>
+  <!-- include head -->
+  <?php include('head.php'); ?>
 
-<!DOCTYPE html>
-<html>
-  <head>
+  <!-- include style -->
+  <link rel="stylesheet" type="text/css" href="css/signin_up.css">
+  
   <title>Login</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <style>
-    .form-signin {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 100%;
-      max-width: 400px;
-      padding: 15px;
-      margin: 0 auto;
-    }
-  </style>
+
   </head>
 
   <body class="text-center">
@@ -43,7 +30,7 @@
 
       <span  class="text-danger"><?php echo $passError; ?></span>
       
-      <button class="btn btn-lg btn-primary btn-block mt-3 mb-3" type="submit" name= "btn-login">Login</button>
+      <button class="btn btn-lg btn-secondary mt-3 mb-3" type="submit" name= "btn-login">Login</button>
 
       <a class="text-muted" href="register.php">Register Here</a>
             

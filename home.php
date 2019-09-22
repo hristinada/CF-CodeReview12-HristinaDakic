@@ -14,14 +14,13 @@
     $userRow=mysqli_fetch_array($res, MYSQLI_ASSOC);
   ?>
   
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Welcome <?php echo $userRow['userName']; ?></title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!-- include head -->
+  <?php include('head.php'); ?>
+
+      <title>Welcome <?php echo $userRow['userName']; ?></title>
+  
   </head>
+  
   <body>
 
     <nav class="navbar navbar-dark bg-dark"> 
@@ -59,6 +58,7 @@
         ?>
         <?php } ?>
     </div>
+    
   </body>
 </html>
 <?php ob_end_flush(); ?>
