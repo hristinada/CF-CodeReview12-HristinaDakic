@@ -1,19 +1,30 @@
 <?php
 
-$value = $_POST["value2"];
+//ajax check for email
+	include_once 'dbconnect.php';
 
-include_once 'dbconnect.php';
+	$email = $_POST["email"];
 
-$query= "SELECT userEmail FROM `users` WHERE userEmail LIKE '$value';";
-$result = $conn->query($query);
+	$query = "SELECT userEmail FROM `users` WHERE userEmail LIKE '$email';";
 
-if($result->num_rows > 0) {
-echo "E-mail is taken";
-}
-else{
-//echo "username is unique";
-}
+	$result = $conn->query($query);
 
-// MAKE AJAX ALSO FOR USERNAME
+	if($result->num_rows > 0) {
+	echo "E-mail is taken";
+	} else {
+		echo "";
+	}
 
+//ajax check for username
+	$username = $_POST["username"];
+
+	$query2 = "SELECT userName FROM `users` WHERE userName LIKE '$username';";
+
+	$result2 = $conn->query($query2);
+
+	if($result2->num_rows > 0) {
+		echo "Username is taken";
+	} else {
+		echo "";
+	}
 ?>
