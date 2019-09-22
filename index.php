@@ -30,7 +30,7 @@
 
       <span  class="text-danger"><?php echo $passError; ?></span>
       
-      <button class="btn btn-lg btn-secondary mt-3 mb-3" type="submit" name= "btn-login">Login</button>
+      <button class="btn btn-lg btn-secondary btn-block mt-3 mb-3" type="submit" name= "btn-login">Login</button>
 
       <a class="text-muted" href="register.php">Register Here</a>
             
