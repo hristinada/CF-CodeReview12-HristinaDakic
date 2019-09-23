@@ -1,34 +1,14 @@
-  <?php
-    ob_start();
-    session_start();
-    require_once 'dbconnect.php';
-
-    //if session is not set this will redirect to login page
-    if( !isset($_SESSION[ 'user' ]) ) {
-     header("Location: index.php");
-     exit;
-    }
-
-    //select logged-in users details
-    $res=mysqli_query($conn, "SELECT * FROM users WHERE userId=".$_SESSION['user']);
-
-    $userRow=mysqli_fetch_array($res, MYSQLI_ASSOC);
-
-  ?>
+<!-- include user session -->
+  <?php include ('userSession.php'); ?>
   
 <!-- include head -->
   <?php include('head.php'); ?>
 
+<!-- include style -->
+  <link rel="stylesheet" type="text/css" href="css/signin_up.css">
+  
       <title>Welcome <?php echo $userRow['userName']; ?></title>
   
-  <style>
-    p {
-      font-size: 1.3vw;
-    }
-    li {
-      font-size: 1.3vw;
-    }
-  </style>
   </head>
   
   <body>
@@ -62,18 +42,11 @@
 
 <!-- page content -->
     <div class="container-fluid">
-    <div class="row m-4">
-      <?php if($userRow['userRole'] == 0){ ?>
-        <?php 
-        include 'user.php';
-        ?>
-        <?php }
-        else{ ?>
-        <?php 
-        include 'admin.php';
-        ?>
-        <?php } ?>
-    </div>
+      <div class="row m-4">
+          <?php 
+           include 'pageContent.php';
+          ?>
+      </div>
     </div>
     
   </body>

@@ -14,7 +14,7 @@
   <body class="text-center">
     <form class="form-signin mx-auto " method="post"  action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete= "off">
   
-      <h1 class="h3 mb-3 font-weight-normal">Log In</h1>
+      <h2 class="text-info mb-3 font-weight-bold">Log In</h2>
      
       <?php
         if (isset($errMSG)) {
